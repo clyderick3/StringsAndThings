@@ -14,8 +14,26 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
-        return null;
+    public Integer countYZ(String input) {
+        // Start at the beginning of a sentence. Scan the sentence and return 1 if why is present or Z is present.
+        //Then add the 1's for however many times they appear in a sentence.
+        //Only makes variables you know you need at first.
+        //The computer finds what I am looking for
+        int count = 0;
+        int length = input.length();
+        for (int i = 0; i < length; i++) {
+            //charAt is a method that takes a parameter index so it needs something within the parentheses.
+            if ((input.charAt(i) == 'y' || input.charAt(i) == 'z') &&
+                    (i == input.length() - 1) || !(Character.isLetter(input.charAt(i + 1))))
+            {
+                count = count + 1;
+
+            }
+
+
+        }
+        return count;
+
     }
 
     /**
@@ -28,7 +46,7 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        return base.replace(remove, "");
     }
 
     /**
@@ -40,7 +58,19 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+       // Scan the sentence to see how many "is" and "not" appear.
+        // Return true if the counts are equal in number.
+        int countIs = 0;
+        int countNot = 0;
+        for  (int i = 0; i < input.length() - 1; i++) {
+            if (input.charAt(i) == 'i' && (input.charAt(i+1)=='s')) {
+                countIs++;
+            }
+            if (input.charAt(i) == 'n' && input.charAt(i+1) == 'o' && input.charAt(i+2) == 't') {
+                countNot++;
+            }
+        }
+        return countIs == countNot;
     }
 
     /**
@@ -51,7 +81,19 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        // if there are two g's next to each other it should return true
+        // if there is any single g in the phrase, it should return false
+        for (int i = 1; i < input.length() ; i++) {
+            if (input.charAt(i) == 'g') {
+               if (input.charAt(i+1) != 'g' && input.charAt(i-1) != 'g') {
+                return false;
+               }
+            }
+
+        }
+        //return input.contains("gg");
+        // return input.indexOf("gg") != - 1;
+        return true;
     }
 
 
@@ -63,6 +105,14 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int count = 0;
+        // -3 so it doesn't throw an error at the end of the string.
+        for (int i = 0 ; i<input.length()-3 ; i++){
+            if (input.charAt(i) == input.charAt(i+1) && input.charAt(i) == input.charAt(i+2)) {
+                count = count + 1;
+            }
+        }
+
+        return count;
     }
 }
