@@ -18,7 +18,7 @@ public class StringsAndThings {
         // Start at the beginning of a sentence. Scan the sentence and return 1 if Y is present or Z is present.
         //Then add the 1's for however many times they appear in a sentence.
         //Only makes variables you know you need at first.
-        //The computer finds what I am looking for
+        //The computer then finds what I am looking for
         int count = 0;
         int length = input.length();
         for (int i = 0; i < length; i++) {
