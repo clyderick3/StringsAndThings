@@ -15,7 +15,7 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input) {
-        // Start at the beginning of a sentence. Scan the sentence and return 1 if why is present or Z is present.
+        // Start at the beginning of a sentence. Scan the sentence and return 1 if Y is present or Z is present.
         //Then add the 1's for however many times they appear in a sentence.
         //Only makes variables you know you need at first.
         //The computer finds what I am looking for
