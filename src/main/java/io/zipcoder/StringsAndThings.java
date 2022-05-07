@@ -24,6 +24,7 @@ public class StringsAndThings {
         for (int i = 0; i < length; i++) {
             //charAt is a method that takes a parameter index so it needs something within the parentheses.
             if ((input.charAt(i) == 'y' || input.charAt(i) == 'z') &&
+                    //if not a valid character at the end (like a blank -- skip).
                     (i == input.length() - 1) || !(Character.isLetter(input.charAt(i + 1))))
             {
                 count = count + 1;
